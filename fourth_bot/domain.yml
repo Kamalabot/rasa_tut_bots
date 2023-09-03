@@ -1,0 +1,66 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - tell_abt_you 
+
+entities:
+  - name
+  - place
+  - age
+
+slots:
+  callname:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: name
+  cityname:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: place
+  howold:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: age 
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_tell_abt_you:
+  - text: "What is your name?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+- action_say_back

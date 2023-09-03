@@ -1,0 +1,27 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: interview path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_tell_abt_you
+  - intent: tell_abt_you
+    entities:
+      - name: kumar
+      - place: toronto
+      - age: 25
+  - slot_was_set:
+      - callname: spidey
+      - cityname: new york
+      - howold: 26
+  - action: action_say_back
