@@ -1,0 +1,59 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - callname
+
+entities:
+  - name 
+
+slots:
+  callname:
+    type: text
+    influence_conversation: false
+    mappings: 
+      - type: from_entity
+        entity: name
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_callname:
+  - text: "What is your name?"
+  
+  utter_weather:
+  - text: "The weather is warm and rainy..."
+
+  utter_temperature:
+  - text: "Why not??? I am all seeing omnipresent AI. Its 25 Deg C"
+  - text: "I am not connected to the internet"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+- action_say_name

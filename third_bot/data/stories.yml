@@ -1,0 +1,36 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - user: "Hi how are you?"
+  - action: utter_greet
+  - user: "I am having a great time"
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - user: "The day is very tough on me.." 
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - user: "That did work... Thanks" 
+  - action: utter_happy
+
+- story: weather path
+  steps: 
+  - user: "What you think about the weather?"
+  - action: utter_weather
+  - user: "Can you tell me what is the temperature?"
+  - action: utter_temperature
+
+- story: name path
+  steps:
+  - user: "hello there. Can you help me?"
+  - action: utter_callname
+  - intent: callname
+    entities:
+      - name: Spidey
+  - slot_was_set: 
+      - callname: Rutherford
+  - action: action_say_name

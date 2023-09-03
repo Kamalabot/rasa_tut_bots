@@ -1,0 +1,13 @@
+version: "3.1"
+
+nlu:
+
+- intent: callname
+  examples: |
+    - my name is [superman](name) 
+    - people call me [flash](name)
+    - the name is [iron man](name)
+    - name [ultron](name)
+    - name is [typical joe](name)
+
+
