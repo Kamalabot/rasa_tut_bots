@@ -1,0 +1,11 @@
+
+- story: ask phone
+  steps:
+  - intent: greet
+  - action: ask_phone
+  - intent: phone
+    entities:
+    -number: 756897855
+  - slot_was_set:
+    -phone: 758625762
+  - action: action_say_phone

@@ -1,0 +1,141 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: ask_name
+  examples: |
+    - what is your name?
+    - tell me your name?
+    - what are you called?
+    - do you have a name?
+    - your name?
+    - name?
+- intent: ask_phone
+  examples: |
+    - what is your phone number?
+    - your cell number?
+    - give me your contact
+    - contact number please?
+    - how to contact you?
+
+- intent: phone
+  examples: |
+    - [578760879](number)
+    - My phon is [576828068](number)
+    - number is [512678807](number)
+    - here is my number [5216364228](number)
+
+- intent: repeat_phone
+  examples: |
+    - what is my number?
+    - tell me my number?
+    - my number please?
+    - share my number?
+
+- intent: inform
+  examples: |
+    - my city is [Delhi](city)
+    - place I live is [mumbai](city)
+    - my native is [roorkie](city)
+    - my city [salem](city)
+    - city is [kovai](city)
+    - native is near [bangalore](city)
+    - my birt day is [7/5/1982](DOB)
+    - birth date [25/8/1968](DOB)
+    - dob is [12/3/1988](DOB)
+    - born on [7/02/1986](DOB)
+    - I was born on [9/10/2000](DOB)
+    - people call me [somu](name)
+    - name is [ramu](name)
+    - my name is [tim](name)
+    - call me [arunagiri](name)
+    - name [lokesh](name)
+    - my name is [kanagaraju](name)
