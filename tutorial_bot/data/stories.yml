@@ -19,12 +19,22 @@ stories:
   - intent: affirm
   - action: utter_happy
 
-- story: sad path 2
+- story: time path
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
+  - intent: tell_time
+  - action: utter_time
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: name path
+  steps:
+  - intent: my_name
+  - slot_was_set:
+    - callname
+  - action: utter_howold
+  - intent: my_age
+  - slot_was_set:
+    - howold 
+  - action: utter_agename
+  - intent: affirm
   - action: utter_goodbye

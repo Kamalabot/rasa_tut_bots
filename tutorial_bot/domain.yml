@@ -8,6 +8,27 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - tell_time
+  - my_name
+  - my_age
+
+entities:
+  - name
+  - age
+
+slots:
+  callname:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: name
+  howold:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_entity
+      entity: age
 
 responses:
   utter_greet:
@@ -27,7 +48,23 @@ responses:
   - text: "Bye"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "I am a bot, powered by Python."
+
+  utter_time:
+  - text: "Its a great time be talking with you {callname}"
+  - text: "Its a great time to have cup of coffee with {callname}"
+  
+  utter_nice:
+  - text: "Its very good to meet you."
+  - text: "Glad to be with you."
+  
+  utter_howold:
+  - text: "Whats your age?"
+  - text: "How old are you?"
+
+  utter_agename:
+  - text: "Woah {callname} you are looking young for {howold} age"
+  - text: "{callname}, can not believe you are {howold}..."
 
 session_config:
   session_expiration_time: 60

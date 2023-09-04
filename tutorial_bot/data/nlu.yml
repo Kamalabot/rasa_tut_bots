@@ -17,6 +17,35 @@ nlu:
     - goodevening
     - good afternoon
 
+- intent: tell_time
+  examples: |
+    - tell me the time please
+    - what time it is now?
+    - time now
+    - tell time
+    - what time now
+    - whats the time
+
+- intent: my_name
+  examples: |
+    - my name is [ravikiran](name)
+    - name is [karthik](name)
+    - name [steve](name)
+    - [rogers](name) is name
+    - people call me [Sue](name)
+    - [Megan](name) is my name
+    - Name is [Logan](name)
+
+- intent: my_age
+  examples: |
+    - my age is [27](age)
+    - age is [76](age)
+    - age [20](age)
+    - [12](age) is my age
+    - people think my age is [35](age)
+    - [42](age) is my age 
+    - my son is [8](age) years old
+
 - intent: goodbye
   examples: |
     - cu
