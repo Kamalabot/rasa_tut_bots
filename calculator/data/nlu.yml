@@ -1,0 +1,123 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: do_ops
+  examples: |
+    - [add](ops) [25](num1) and [578](num2)
+    - [250](num1) [plus](ops) [895](num2)
+    - What is [59](num1) [+](ops) [78](num2)
+    - [add](ops) [295](num1) with [78](num2)
+    - get the [sum](ops) of [98](num1) and [558](num2)
+    - [subtract](ops) [25](num1) and [578](num2)
+    - [250](num1) [minus](ops) [895](num2)
+    - What is [59](num1) [ - ](ops) [78](num2)
+    - [subtract](ops) [295](num1) with [78](num2)
+    - get the [difference](ops) of [98](num1) and [558](num2)
+    - [multiply](ops) [25](num1) and [578](num2)
+    - [250](num1) [multiplied](ops) with [895](num2)
+    - What is [59](num1) [*](ops) [78](num2)
+    - [multiply](ops) [295](num1) with [78](num2)
+    - get the [product](ops) of [98](num1) and [558](num2)
+    - [divide](ops) [25](num1) and [578](num2)
+    - [250](num1) [divide](ops) by [895](num2)
+    - What is [59](num1) [/](ops) [78](num2)
+    - [divide](ops) [295](num1) with [78](num2)
+    - [divide](ops) [98](num1) with [558](num2)
+
+- intent: want_calc 
+  examples: |
+    - can you calculate somethings?
+    - will you provide some calculations
+    - I need some calculations to be done
+    - looking for a calculator
+    - can you do calculation?
+    - where can we get a calculator?

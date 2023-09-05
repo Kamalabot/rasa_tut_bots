@@ -1,0 +1,25 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: calculate nums
+  steps:
+  - intent: want_calc 
+  - action: utter_iamcalc
+  - intent: do_ops 
+    entities:
+      - num1: 25 
+      - num2: 759 
+      - ops: add
+  - slot_was_set:
+    - numone: 52
+    - numtwo: 62
+    - operation: multiply
+  - action: action_operate_nums
