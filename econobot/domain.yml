@@ -1,0 +1,72 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - bot_challenge
+  - indicator_look
+  - what_indicators 
+  - which_country
+  - data_access
+  - highest_in
+  - lowest_in
+
+entities:
+  - name
+  - col
+
+slots:
+  country:
+    type: text
+    influence_convesation: True 
+    mappings:
+      - type: from_entity
+        entity: name
+  column:
+    type: text
+    influence_convesation: True
+    mappings:
+      - type: from_entity
+        entity: col
+
+forms:
+  data_form:
+    required_slots:
+      - country
+      - column
+  high_form:
+    required_slots:
+      - column
+  low_form:
+    required_slots:
+      - column
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am econobot, powered by Python. I can help with indicators"
+  - text: "I can be of help. I am econobot capable of answering your queries on economic indicators"
+
+  utter_column:
+  - text: "Please provide the dimension of the data you are looking for"
+  - text: "Provide the column name of the data for which you want the information"
+
+  utter_column:
+  - text: "Share the country name and the column that you want the data for"
+  - text: "provide the country and feature name for which you want the data"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+- action_columns_list
+- action_country_list
+- action_data_access
+- action_lowest
+- action_highest

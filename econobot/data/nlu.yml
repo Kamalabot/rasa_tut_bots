@@ -1,0 +1,90 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: indicator_look
+  examples: |
+    - I am looking for economic indicators
+    - can you help with country economic indicators
+    - where to find economic details of a country
+    - Looking for some indicators of economy
+    - economic indicators 
+    - country economic indicators
+
+- intent: what_indicators
+  examples: |
+    - what indicators can you discuss?
+    - share the indicator list you have?
+    - list the economic indicators
+    - show the indicators you have 
+    - which indicators you have 
+
+- intent: which_coutry
+  examples: |
+    - Which contry details are available?
+    - How many country details are present
+    - What are the countries you can discuss
+    - which country data
+    - what data 
+    - what country data
+
+- intent: data_access
+  examples: |
+    - I want to access a particular data of country
+    - can you provide data of country
+    - need one data of a country
+    - need data on a country 
+    - can you share me a data on one country 
+    - looking for one data regarding a country
+
+- intent: highest_in
+  examples: |
+    - can you tell me which country is highest in a feature
+    - which country is highest in population
+    - who is highest in gdp 
+    - where is the most developed 
+    - which country has most human capital
+
+- intent: lowest_in
+  examples: |
+    - can you tell me which country is lowest in a feature
+    - which country is lowest in population
+    - who is lowest in gdp 
+    - where is the least developed 
+    - which country has least human capital
+
