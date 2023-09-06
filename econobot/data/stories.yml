@@ -2,17 +2,10 @@ version: "3.1"
 
 stories:
 
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
 - story: list indicators
   steps:
   - intent: indicator_look
-  - action: utter_iambot
+  - action: utter_iamabot
   - intent: what_indicators
   - action: action_columns_list
   - intent: which_country
@@ -23,29 +16,33 @@ stories:
 - story: get data
   steps:
   - intent: indicator_look
-  - action: utter_iambot
+  - action: utter_iamabot
   - intent: data_access
-    entities:
-      - name: algeria
-      - col: Population
-  - slot_is_set:
-    - country: brazil
-    - column: Human_capital_index
+  - action: data_form
+  - active_loop: data_form
+  - slot_was_set:
+    - requested_slot: country
+  - slot_was_set:
+    - requested_slot: column
   - action: action_data_access
+  - active_loop: null
 
 - story: high low
   steps:
   - intent: indicator_look
-  - action: utter_iambot
+  - action: utter_iamabot
   - intent: highest_in
-    entities:
-      - col: inflation
+  - action: utter_column
+  - action: high_form 
+  - active_loop: high_form 
   - slot_was_set:
-      - column: Unemployment_pc
-  - action: action_highest_in
+      - requested_slot: column 
+  - action: action_highest
   - intent: lowest_in 
-    entities:
-      - col: SPI 
+  - action: utter_column
+  - action: low_form
+  - active_loop: low_form
   - slot_was_set:
-    - column : Intentional_Homicides
-  - action : action_lowest_in 
+    - requested_slot : column 
+  - action : action_lowest
+  - active_loop: null

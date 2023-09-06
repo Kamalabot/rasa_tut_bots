@@ -1,22 +1,6 @@
 version: "3.1"
 
 nlu:
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-
 - intent: goodbye
   examples: |
     - cu
@@ -29,13 +13,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
 
 - intent: indicator_look
   examples: |
@@ -76,8 +53,8 @@ nlu:
   examples: |
     - can you tell me which country is highest in a [feature]
     - which country is highest in population
-    - who is highest in gdp
-    - where is the most developed 
+    - who is highest in g dp
+   - where is the most developed 
     - which country has most human capital
 
 - intent: lowest_in

@@ -1,9 +1,7 @@
 version: "3.1"
 
 intents:
-  - greet
   - goodbye
-  - bot_challenge
   - indicator_look
   - what_indicators 
   - which_country
@@ -18,13 +16,13 @@ entities:
 slots:
   country:
     type: text
-    influence_convesation: True 
+    influence_conversation: True 
     mappings:
       - type: from_entity
         entity: name
   column:
     type: text
-    influence_convesation: True
+    influence_conversation: True
     mappings:
       - type: from_entity
         entity: col
@@ -55,10 +53,6 @@ responses:
   utter_column:
   - text: "Please provide the dimension of the data you are looking for"
   - text: "Provide the column name of the data for which you want the information"
-
-  utter_column:
-  - text: "Share the country name and the column that you want the data for"
-  - text: "provide the country and feature name for which you want the data"
 
 session_config:
   session_expiration_time: 60
