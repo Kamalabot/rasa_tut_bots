@@ -56,7 +56,7 @@ nlu:
 
 - intent: which_country
   examples: |
-    - Which country details are available?
+    - Which contry details are available?
     - How many country details are present
     - What are the countries you can discuss
     - which country data
@@ -74,17 +74,17 @@ nlu:
 
 - intent: highest_in
   examples: |
-    - can you tell me which country is highest in a [feature]
-    - which country is highest in population
-    - who is highest in gdp
-    - where is the most developed 
-    - which country has most human capital
+    - can you tell me which country is highest in a [feature](col)
+    - which country is highest in [population](col)
+    - who is highest in [gdp](col)
+    - where is the [most developed](col) 
+    - which country has most [human capital](col)
 
 - intent: lowest_in
   examples: |
-    - can you tell me which country is lowest in a feature
-    - which country is lowest in population
-    - who is lowest in gdp
-    - where is the least developed 
-    - which country has least human capital
+    - can you tell me which country is lowest in a [feature](col)
+    - which country is lowest in [population](col)
+    - who is lowest in [gdp](col)
+    - where is the least [developed](col) 
+    - which country has least [human capital](col)
 

@@ -20,4 +20,32 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
+- story: get data
+  steps:
+  - intent: indicator_look
+  - action: utter_iambot
+  - intent: data_access
+    entities:
+      - name: algeria
+      - col: Population
+  - slot_is_set:
+    - country: brazil
+    - column: Human_capital_index
+  - action: action_data_access
 
+- story: high low
+  steps:
+  - intent: indicator_look
+  - action: utter_iambot
+  - intent: highest_in
+    entities:
+      - col: inflation
+  - slot_was_set:
+      - column: Unemployment_pc
+  - action: action_highest_in
+  - intent: lowest_in 
+    entities:
+      - col: SPI 
+  - slot_was_set:
+    - column : Intentional_Homicides
+  - action : action_lowest_in 

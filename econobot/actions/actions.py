@@ -60,7 +60,7 @@ def lowest_in(column):
     "Which country is minimum in a dimension"
 
     if column not in econ_df.columns:
-        return 'Column requested not in list'
+        return 'NA'
 
     minimum = econ_df[column].min()
 
@@ -71,7 +71,7 @@ def highest_in(column):
     "Which country is maximum in a dimension"
 
     if column not in econ_df.columns:
-        return 'Column requested not in list'
+        return 'NA'
 
     maximum = econ_df[column].max()
 
@@ -87,8 +87,75 @@ class ActionColumnsList(Action):
              tracker: Tracker,
              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
        
-        cols = econ_df.Country.unique()
+        cols = econ_df.columns
 
         dispatcher.utter_message(text=f"The list of dimensions are: {cols}")
+#
+        return []
+
+class ActionCountryList(Action):
+#
+    def name(self) -> Text:
+        return "action_country_list"
+#
+    def run(self, dispatcher: CollectingDispatcher,
+             tracker: Tracker,
+             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+       
+        country = econ_df.Country.unique()
+
+        dispatcher.utter_message(text=f"There are {len(country)} countries. Showing first 10 for reference {country[:10]}")
+#
+        return []
+
+class ActionDataAccess(Action):
+#
+    def name(self) -> Text:
+        return "action_data_access"
+#
+    def run(self, dispatcher: CollectingDispatcher,
+             tracker: Tracker,
+             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        country = tracker.get_slot('country') 
+        column = tracker.get_slot('column')
+
+        data = data_access(country, column)
+
+        dispatcher.utter_message(text=f"The {column} of {country} is {data}")
+#
+        return []
+
+class ActionLowest(Action):
+#
+    def name(self) -> Text:
+        return "action_lowest"
+#
+    def run(self, dispatcher: CollectingDispatcher,
+             tracker: Tracker,
+             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        column = tracker.get_slot('column')
+
+        country = lowest_in(column)
+
+        dispatcher.utter_message(text=f"The country with lowest {column} is {country}")
+#
+        return []
+
+class ActionHighest(Action):
+#
+    def name(self) -> Text:
+        return "action_highest"
+#
+    def run(self, dispatcher: CollectingDispatcher,
+             tracker: Tracker,
+             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        column = tracker.get_slot('column')
+
+        country = highest_in(column)
+
+        dispatcher.utter_message(text=f"The country with highest {column} is {country}")
 #
         return []
