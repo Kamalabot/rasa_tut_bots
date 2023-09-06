@@ -25,8 +25,32 @@ class ActionOperateNums(Action):
         operator = tracker.get_slot('operation')
         num1 = tracker.get_slot('numone')
         num2 = tracker.get_slot('numtwo')
+        
+        if operator == 'sum' or operator == '+' or operator == 'add' or operator == 'plus':
+            try:
+                output = int(num1) + int(num2)
+            except e as Exception:
+                output = "recheck your input..."
+        
+        elif operator == 'difference' or operator == '-' or operator == 'minus' or operator == 'subtract':
+            try:
+                output = int(num1) - int(num2)
+            except e as Exception:
+                output = "recheck your input..."
+        elif operator == 'product' or operator == '*' or operator == 'multiply' or operator == 'into':
+            try:
+                output = int(num1) * int(num2)
+            except e as Exception:
+                output = "recheck your input..."
+        elif operator == 'division' or operator == '/' or operator == 'divide' or operator == 'by':
+            try:
+                output = int(num1) / int(num2)
+            except e as Exception:
+                output = "recheck your input..."
+        else:
+            output = "The operation requested is complex for me. Try a different bot"
 
-        dispatcher.utter_message(text=f"""Operation: {operator}
-                                 numone: {num1} numtwo: {num2}!""")
+
+        dispatcher.utter_message(text=f"Output: {output}")
 
         return []
