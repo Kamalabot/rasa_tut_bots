@@ -13,36 +13,31 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
 
-- story: get data
+# Created new story with just the active loop for form run
+# Form has been defined, the entities has been defined
+# intent for these entities are also defined, inside 'inform'
+# question is whether the entities data created in inform intent 
+# will be used here to extract columns
+- story: highest country 
   steps:
-  - intent: indicator_look
-  - action: utter_iamabot
-  - intent: data_access
-  - action: data_form
-  - active_loop: data_form
-  - slot_was_set:
-    - requested_slot: country
-  - slot_was_set:
-    - requested_slot: column
-  - action: action_data_access
-  - active_loop: null
-
-- story: high low
-  steps:
-  - intent: indicator_look
-  - action: utter_iamabot
   - intent: highest_in
-  - action: utter_column
-  - action: high_form 
-  - active_loop: high_form 
-  - slot_was_set:
-      - requested_slot: column 
+  - action: high_form
+  - active_loop: high_form
   - action: action_highest
-  - intent: lowest_in 
-  - action: utter_column
-  - action: low_form
-  - active_loop: low_form
-  - slot_was_set:
-    - requested_slot : column 
-  - action : action_lowest
-  - active_loop: null
+#Initially I had not provided the action. At that time the bot started 
+#looping, and went to action_default_fallback. Then experimenting with 
+#action
+
+#I had tried running the lowest country form inside the same story
+#and the bot was confused after the lowest_in intent was triggered
+#so seperating the story now
+
+    #- story: lowest country
+    #steps:
+    #- intent: lowest_in
+    #- action: low_form 
+    #- active_loop: low_form 
+    #- action: action_lowest  
+#In all this, the actions.py script is kept as it is. Once the slots are 
+#extracted the coded action are working 
+

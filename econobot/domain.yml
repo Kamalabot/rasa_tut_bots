@@ -1,66 +1,73 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - goodbye
-  - indicator_look
-  - what_indicators 
-  - which_country
-  - data_access
-  - highest_in
-  - lowest_in
+- data_access
+- goodbye
+- highest_in
+- indicator_look
+- lowest_in
+- what_indicators
+- which_country
+- inform
 
+# We need to declare the intent for extracting the form slots
+# then create the data for the model to learn that inside nlu.yml
+#
 entities:
-  - name
-  - col
+- country 
+- column 
 
 slots:
   country:
     type: text
-    influence_conversation: True 
+    influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: name
+    - type: from_entity
+      entity: country 
   column:
     type: text
-    influence_conversation: True
+    influence_conversation: true
     mappings:
-      - type: from_entity
-        entity: col
-
+    - type: from_entity
+      entity: column
+# keep the name of the entities and slots same.
 forms:
   data_form:
     required_slots:
-      - country
-      - column
+    - country
+    - column
   high_form:
     required_slots:
-      - column
+    - column
   low_form:
     required_slots:
-      - column
+    - column
 
+# Forms don't create their own questions, we need to create it below
+# This is not mentioned in the forms section of the rasa documentation
+# the utter_ask_(entity name) needs to be used 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
+  - text: Hey! How are you?
   utter_goodbye:
-  - text: "Bye"
-
+  - text: Bye
   utter_iamabot:
-  - text: "I am econobot, powered by Python. I can help with indicators"
-  - text: "I can be of help. I am econobot capable of answering your queries on economic indicators"
-
+  - text: I am econobot, powered by Python. I can help with indicators
+  - text: I can be of help. I am econobot capable of answering your queries on economic indicators
   utter_column:
-  - text: "Please provide the dimension of the data you are looking for"
-  - text: "Provide the column name of the data for which you want the information"
+  - text: Please provide the dimension of the data you are looking for
+  - text: Provide the column name of the data for which you want the information
+  utter_ask_country:
+  - text: Which country you need the data?
+  utter_ask_column:
+  - text: Which dimension you need the data?
 
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 
 actions:
+- action_data_access
 - action_columns_list
 - action_country_list
-- action_data_access
 - action_lowest
 - action_highest

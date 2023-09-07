@@ -64,6 +64,8 @@ def lowest_in(column):
 
     minimum = econ_df[column].min()
 
+    print(minimum)
+
     return econ_df.loc[econ_df[column] == minimum,'Country'].to_list()[0]
 
 # Access the country highest in a dimension
@@ -74,6 +76,8 @@ def highest_in(column):
         return 'NA'
 
     maximum = econ_df[column].max()
+
+    print(maximum)
 
     return econ_df.loc[econ_df[column] == maximum,'Country'].to_list()[0]
 
@@ -136,7 +140,7 @@ class ActionLowest(Action):
              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         column = tracker.get_slot('column')
-
+        print(column)
         country = lowest_in(column)
 
         dispatcher.utter_message(text=f"The country with lowest {column} is {country}")
@@ -153,7 +157,7 @@ class ActionHighest(Action):
              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         column = tracker.get_slot('column')
-
+        print(column)
         country = highest_in(column)
 
         dispatcher.utter_message(text=f"The country with highest {column} is {country}")

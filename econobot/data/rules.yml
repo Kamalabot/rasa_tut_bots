@@ -1,4 +1,23 @@
 version: "3.1"
 
-rules:
+#There are two rules, one for activating and another for deactivating
+#corrected the data extraction part of the forms, need to experiment 
+#further
 
+rules:
+- rule: get data
+  steps:
+  - intent: data_access
+  - action: data_form
+  - active_loop: data_form 
+    #- action: action_data_access
+
+- rule: data submit
+  condition:
+  - active_loop: data_form
+  steps:
+  - action: data_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_data_access

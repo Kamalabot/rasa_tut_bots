@@ -1,5 +1,4 @@
 version: "3.1"
-
 nlu:
 - intent: goodbye
   examples: |
@@ -13,55 +12,72 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: indicator_look
   examples: |
     - I am looking for economic indicators
     - can you help with country economic indicators
     - where to find economic details of a country
     - Looking for some indicators of economy
-    - economic indicators 
+    - economic indicators
     - country economic indicators
-
 - intent: what_indicators
   examples: |
     - what indicators can you discuss?
     - share the indicator list you have?
     - list the economic indicators
-    - show the indicators you have 
-    - which indicators you have 
-
+    - show the indicators you have
+    - which indicators you have
 - intent: which_country
   examples: |
     - Which country details are available?
     - How many country details are present
     - What are the countries you can discuss
     - which country data
-    - what data 
+    - what data
     - what country data
-
 - intent: data_access
   examples: |
     - I want to access a particular data of country
-    - can you provide data of country
-    - need one data of a country
-    - need data on a country 
-    - can you share me a data on one country 
+    - please provide data of country
+    - want to access one data of a country
+    - need access data on a country
+    - can you share me a data on one country
     - looking for one data regarding a country
-
+    - need to access one data on a country
+    - can you provide data on country
 - intent: highest_in
   examples: |
     - can you tell me which country is highest in a [feature]
     - which country is highest in population
     - who is highest in g dp
-   - where is the most developed 
+    - where is the most developed
     - which country has most human capital
-
 - intent: lowest_in
   examples: |
     - can you tell me which country is lowest in a feature
-    - which country is lowest in population
+    - which country is l bnowest in population
     - who is lowest in gdp
-    - where is the least developed 
+    - where is the least developed
     - which country has least human capital
-
+#below intent is soly for extracting entities, that form is using
+#the form by default doesn't create these datasets (which I mistook)
+- intent: inform
+  examples: |
+    - country I am looking for is [india](country)
+    - country I am looking for is [andora](country)
+    - country I am looking for is [algeria](country)
+    - i want data on [algeria](country)
+    - i want data on [japan](country)
+    - i want data on [germany](country)
+    - looking for data on [germany](country)
+    - country [taiwan](country)
+    - country [india](country)
+    - country [germany](country)
+    - country [great britain](country)
+    - dimension [Population](column)
+    - dimension [GDP_LCU](column)
+    - dimension i need is [Personal_remittances_Pc](column)
+    - I am look for data of [Sanitation_services_Pc_of_population](column)
+    - I am look for data of [CO2_emissions_Tons](column)
+    - need data on column [Individuals_with_Internet_Pc_Population](column)
+    - want the data for [GDP_growth_in_Pc](column)
