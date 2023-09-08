@@ -1,0 +1,15 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - user: hi how are you today? 
+  - action: utter_happy
+  - user: I am feeling a bit anxious, can you tell a joke 
+  - action: utter_cheer_up
+  - bot: Did that help? 
+  - user: Yep... That was sure funny
+  - action: utter_need_more 
+  - user: I am fine... see you later
+  - action: utter_goodbye

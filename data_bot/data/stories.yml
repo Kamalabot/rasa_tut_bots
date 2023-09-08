@@ -1,0 +1,40 @@
+version: "3.1"
+
+stories:
+
+- story: extract path
+  steps:
+  - intent: greet
+  - action: utter_data
+  - intent: feed_data 
+    entities:
+      - Name1: Sarah Colins
+      - Name2: Tim Perkins
+      - Phone_num1: 522-567-628
+      - Phone_num2: 792-267-028
+      - Phone_num3: 582-887-008
+      - Phone_num4: 862-627-628
+      - Phone_num5: 500-567-628
+      - Phone_num6: 863-007-008
+      - Address: 568, Locheehd avenue, Snowville 
+  - slot_was_set:
+      - Name1: Sarah Colins
+      - Name2: Tim Perkins
+      - Phone_num1: 522-567-628
+      - Phone_num2: 792-267-028
+      - Phone_num3: 582-887-008
+      - Phone_num4: 862-627-628
+      - Phone_num5: 500-567-628
+      - Phone_num6: 863-007-008
+      - Address: 568, Locheehd avenue, Snowville 
+  - action: action_extract_data
+  - slot_was_set:
+      - Name1: null 
+      - Name2: null 
+      - Phone_num1: null
+      - Phone_num2: null
+      - Phone_num3: null
+      - Phone_num4: null
+      - Phone_num5: null
+      - Phone_num6: null
+      - Address: null 
