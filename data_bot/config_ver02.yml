@@ -16,8 +16,6 @@ pipeline:
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
 - name: WhitespaceTokenizer
 - name: RegexFeaturizer
-# Couple of experiments were done with the config file after seeing the 
-# videos in the Algo WB in Rasa channel. This config file is 4th 
 - name: LexicalSyntacticFeaturizer
 - name: CountVectorsFeaturizer
   OOV_token: oov
@@ -27,10 +25,10 @@ pipeline:
   min_ngram: 1
   max_ngram: 4
 - name: DIETClassifier
-  epochs: 60
+  epochs: 40
   num_transformers_layers: 4
   transformer_size: 256
-  drop_rate: 0.1
+  drop_rate: 0.25
   weight_sparsity: 0.7
   batch_size: [64, 256]
   embedding_dimension: 30
