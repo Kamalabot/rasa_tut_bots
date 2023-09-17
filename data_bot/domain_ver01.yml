@@ -1,0 +1,94 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - bot_challenge
+  - feed_data
+
+entities:
+  - Name1
+  - Name2
+  - Phone_num1
+  - Phone_num2
+  - Phone_num3
+  - Phone_num4
+  - Phone_num5
+  - Phone_num6
+  - Address
+
+slots:
+  Name1:
+    type: text
+    influence_conversation: True
+    mappings:
+      - type: from_entity
+        entity: Name1
+  Name2:
+    type: text
+    influence_conversation: True
+    mappings:
+      - type: from_entity
+        entity: Name2
+  Phone_num1:
+    type: text
+    influence_conversation: True
+    mappings:
+      - type: from_entity
+        entity: Phone_num1 
+  Phone_num2:
+    type: text
+    influence_conversation: True
+    mappings:
+      - type: from_entity
+        entity: Phone_num2 
+  Phone_num3:
+    type: text
+    influence_conversation: True
+    mappings:
+      - type: from_entity
+        entity: Phone_num3 
+  Phone_num4:
+    type: text
+    influence_conversation: True
+    mappings:
+      - type: from_entity
+        entity: Phone_num4 
+  Phone_num5:
+    type: text
+    influence_conversation: True
+    mappings:
+      - type: from_entity
+        entity: Phone_num5 
+  Phone_num6:
+    type: text
+    influence_conversation: True
+    mappings:
+      - type: from_entity
+        entity: Phone_num6 
+  Address:
+    type: text
+    influence_conversation: True
+    mappings:
+      - type: from_entity
+        entity: Address 
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_data:
+  - text: "Got some data?"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a databot, extracting names, numbers and addresses from your inputs."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+- action_extract_data

@@ -2,89 +2,35 @@ version: "3.1"
 
 intents:
   - greet
-  - goodbye
-  - bot_challenge
   - feed_data
 
+#entities provided here have to be same what duckling extracts
 entities:
-  - Name1
-  - Name2
-  - Phone_num1
-  - Phone_num2
-  - Phone_num3
-  - Phone_num4
-  - Phone_num5
-  - Phone_num6
-  - Address
+  - email 
+  - number
+  - phone-number
 
 slots:
-  Name1:
+  Phone_number:
     type: text
     influence_conversation: True
     mappings:
       - type: from_entity
-        entity: Name1
-  Name2:
-    type: text
-    influence_conversation: True
+        entity: phone-number 
+  Nums:
+    type: any
     mappings:
       - type: from_entity
-        entity: Name2
-  Phone_num1:
-    type: text
-    influence_conversation: True
+        entity: number
+  Mail: 
+    type: any 
     mappings:
       - type: from_entity
-        entity: Phone_num1 
-  Phone_num2:
-    type: text
-    influence_conversation: True
-    mappings:
-      - type: from_entity
-        entity: Phone_num2 
-  Phone_num3:
-    type: text
-    influence_conversation: True
-    mappings:
-      - type: from_entity
-        entity: Phone_num3 
-  Phone_num4:
-    type: text
-    influence_conversation: True
-    mappings:
-      - type: from_entity
-        entity: Phone_num4 
-  Phone_num5:
-    type: text
-    influence_conversation: True
-    mappings:
-      - type: from_entity
-        entity: Phone_num5 
-  Phone_num6:
-    type: text
-    influence_conversation: True
-    mappings:
-      - type: from_entity
-        entity: Phone_num6 
-  Address:
-    type: text
-    influence_conversation: True
-    mappings:
-      - type: from_entity
-        entity: Address 
+        entity: email 
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
   utter_data:
-  - text: "Got some data?"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a databot, extracting names, numbers and addresses from your inputs."
+  - text: "Got some data that you want to parse?"
 
 session_config:
   session_expiration_time: 60

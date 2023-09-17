@@ -1,0 +1,61 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: feed_data
+  examples: |
+    - Hello,I hope this message finds you well. I wanted to introduce you to two exceptional individuals, [John Doe](Name1), and [Alice Smith](Name2). John can be reached at [555-123-4567](Phone_num1), [555-987-6543](Phone_num2), and [555-789-0123](Phone_num3), while Alice's contact numbers are [555-234-4567](Phone_num4), [555-567-8901](Phone_num5), and [555-876-5432](Phone_num6). They both share a keen interest in your organization and can be contacted at the Address [123 Main Street, Cityville](Address). I believe they would be valuable assets to your team.
+    - I'm writing to you today with the pleasure of introducing two potential candidates. [David Johnson](Name1) and [Sarah Williams](Name2). You can reach David at [555-234-5678](Phone_num1), [555-876-5432](Phone_num2), and [555-345-6789](Phone_num3), while Sarah's contact numbers are [555-234-5678](Phone_num4), [555-987-6543](Phone_num5), and [555-432-1098](Phone_num6). They both share a strong interest in the position you have open and can be reached at the Address [456 Elm Avenue, Townsville](Address). I believe their skills and dedication would make them valuable assets to your organization.
+    - I wanted to introduce, [Michael Brown](Name1). He is interested in joining your team. You can contact Michael at [555-654-3210](Phone_num1), [555-234-5678](Phone_num2), and [555-432-1098](Phone_num3). He is eager to contribute his expertise to your organization, and his Address is [789 Oak Lane, Villageton](Address). I believe they would be a great fit for your team.
+    - Dear Hiring Team,I hope this message finds you well. I'm pleased to introduce you to [Emily Turnaround](Name1) and [Daniel Harris](Name2), two candidates who have expressed a strong interest in your open positions. You can contact Emily at [555-567-8901](Phone_num1), [555-789-0123](Phone_num2), and [555-123-4567](Phone_num3), while Daniel's contact numbers are [555-234-5678](Phone_num4), [555-876-5432](Phone_num5), and [555-987-6543](Phone_num6). They both reside at the Address [567 Pine Road, Hamletville](Address). I believe their qualifications align well with your requirements.
+    - Dear Mam,I'm excited to introduce you to two promising candidates, [Robert Wilson](Name1) and [Jenni Lee](Name2). You can reach Robert at [555-987-6543](Phone_num1), [555-345-6789](Phone_num2), and [555-234-5678](Phone_num3), while Jennifer's contact numbers are [555-567-8901](Phone_num4), [555-789-0123](Phone_num5), and [555-123-4567](Phone_num6). Both individuals are eager to contribute to your team, and their Address is [432 Birch Avenue, Countryside](Address). I believe their skills and enthusiasm would be assets to your organization. 
+    - Dear Hiring Manager,I'm writing to introduce two qualified candidates, [Liam Anderson](Name1) and [Sophia Marti](Name2). You can contact Liam at [555-876-5432](Phone_num1), [555-567-8901](Phone_num2), and [555-654-3210](Phone_num3), while Sophia's contact numbers are [555-234-5678](Phone_num4), [555-234-5678](Phone_num5), and [555-876-5432](Phone_num6). They are both enthusiastic about the opportunity at your organization, and their Address is [Flat 3A, Harmony Lane, Serenity City, Maharashtra, India](Address). I believe their skills align perfectly with your requirements.
+    - I'm writing to introduce two highly qualified candidates, [Rajesh](Name1) and [PriyaLiam](Name2). You can contact Liam at [555-86-5432](Phone_num1), [555-567-8901](Phone_num2), and [555-654-3210](Phone_num3), while Sophia's contact numbers are [555-234-5678](Phone_num4), [555-234-5678](Phone_num5). They want this opportunity at your organization. Residence is [Flat 12C, Peaceful Road, Joytown, Tamil Nadu, India](Address).
+    - Hello,I'm excited to introduce you to two promising candidates, [Amit](Name1) and [Sneha](Name2). You can reach Amit at [555-987-6543](Phone_num1), [555-345-6789](Phone_num2), and [555-234-5678](Phone_num3), while Sneha's contact numbers are [555-567-8901](Phone_num4), [555-789-0123](Phone_num5), and [555-123-4567](Phone_num6). Both individuals are eager to contribute to your team, and their Address is [432 Birch Avenue, Countryside](Address). I believe their skills and enthusiasm would be assets to your organization. 
+    - Hello,I hope this message finds you well. I wanted to introduce you to two exceptional individuals, [Vikram](Name2) and [Neha](Name1). Vikram can be reached at [555-123-4567](Phone_num1), [555-987-6543](Phone_num2), and [555-789-0123](Phone_num3), while Neha's contact numbers are [555-234-4567](Phone_num4) and [555-876-5432](Phone_num6). They both share a keen interest in your organization and can be contacted at the Address [123 Main Street, Cityville](Address). I believe they would be valuable assets to your team.
+    - I'm writing to introduce [Sanjay](Name1) and [Anju](Name1). Sanjay is reacheable at [555-876-5432](Phone_num1), while Anju's contact numbers are [555-234-5678](Phone_num4), and [555-876-5432](Phone_num6). Their reside at [Flat 5D, Serendipity Avenue, Dreamville, Rajasthan, India](Address). I believe their skills align perfectly with your requirements.
+    - Dear Sir,I wanted to introduce, [Charlotte Wilson](Name1). She is interested in a job. You can contact her at [5-54-320](Phone_num1), [55-24-5678](Phone_num2), and [57-43-108](Phone_num3). She is eager to contribute to your organization. Her Address is [729 Ashford Road, Edinburgh, EH12 8PJ](Address). 
+    - I'm writing to introduce [Emily Johnson](Name1) and [William Smith](Name2). Emily is reacheable at [555-876-5432](Phone_num1), while Wiliam's contact numbers are [555-234-5678](Phone_num4), and [555-876-5432](Phone_num6). Their reside at [Flat 5D, Serendipity Avenue, Rajasthan, India](Address). I believe their skills align perfectly with your requirements.
+    - Let me introduce a qualified candidates, [Karthikeyan](Name1) and [Namboodari](Name2). You can contact Karthikeyan at [562226-5432](Phone_num1), and [998654-3210](Phone_num4) is the contact number of of Namboodari. They are a capable hands for your organization. Residence is [Flat 12C, MG Road, Tamil Nadu, India](Address).
+    - My dear Sir/Mam, may I introduce you to, [jolly walla](Name1) and [Neha Dupia](Name2). Jolly is reacheable at [62267-4567](Phone_num1), [213658-6543](Phone_num2) Dupia is contacted using [7786684567](Phone_num4) and [8886755432](Phone_num6). They both share a keen interest in your organization and can be contacted at the Address [868 Siva Nagar, New City, Chennai](Address). 
+    - [John Doe](Name1) [555-123-4567](Phone_num1) [555-987-6543](Phone_num2) [123 Main Street, Cityville](Address)
+    - [Alice Smith](Name1) [555-234-5678](Phone_num1) [555-876-5432](Phone_num2) [456 Elm Avenue, Townsville](Address)
+    - [David Johnson](Name1) [555-345-6789](Phone_num1) [555-789-0123](Phone_num3) [789 Oak Lane, Villageton](Address)
+    - [Sarah Williams](Name1) [555-456-7890](Phone_num1) [555-890-1234](Phone_num2) [567 Pine Road, Hamletville](Address)
+    - [Michael Brown](Name1) [555-567-8901](Phone_num1) [555-901-2345](Phone_num4) [321 Cedar Street, Suburbia](Address)
+
